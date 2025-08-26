@@ -1,73 +1,87 @@
 import streamlit as st
 from PIL import Image
 
-# Page config
-st.set_page_config(
-    page_title="Cancer Detection App",
-    page_icon="🩺",
-    layout="wide"
-)
+# App Config
+st.set_page_config(page_title="AI Powered Cancer Detection", page_icon="🩺", layout="wide")
 
-# Header
-st.title("🩺 AI-Powered Cancer Detection")
-st.markdown("### Detect **Oral Cancer** and **Leukemia** with AI Assistance")
-st.write("This application is designed for research & educational purposes. Upload your medical images and explore AI-based diagnostic support.")
+# Sidebar Navigation
+pages = ["🏠 Home", "🩺 Cancer Detection"]
+choice = st.sidebar.radio("Navigate", pages)
 
-st.markdown("---")
+# ---------------- HOME PAGE ----------------
+if choice == "🏠 Home":
+    st.image("https://www.skf.edu.in/images/skf-newlogo-new1.jpg?v=2", width=250)
+    st.title("AI Powered Cancer Detection System")
+    st.markdown("### Internship Project - Supreme Knowledge Foundation")
+    
+    st.markdown("---")
+    st.subheader("👥 Project Team Members")
+    
+    if st.button("Show Team Members"):
+        st.success("✅ Team Members:")
+        st.write("- **Pritam Kumar Modak**")
+        st.write("- **Roni Ghosh**")
+        st.write("- **Rishav Paul**")
+        st.write("- **Sohini Pal**")
+        st.write("- **Soumen Pal**")
 
-# Sidebar
-st.sidebar.image("https://cdn-icons-png.flaticon.com/512/2966/2966488.png", width=100)
-st.sidebar.title("⚙️ Options")
-cancer_type = st.sidebar.radio("Select Cancer Type", ["Oral Cancer", "Leukemia"])
-st.sidebar.info("Choose a cancer type and upload image for detection.")
+    st.markdown("---")
+    st.info("This project is part of the internship program at **Supreme Knowledge Foundation**, focusing on AI-based cancer detection for research and educational purposes.")
 
-# Layout
-col1, col2 = st.columns([1, 2])
+# ---------------- CANCER DETECTION PAGE ----------------
+elif choice == "🩺 Cancer Detection":
+    st.title("AI-Powered Cancer Detection")
+    st.write("Detect **Oral Cancer** and **Leukemia** using AI-powered assistance (UI Demo).")
 
-with col1:
+    st.markdown("---")
+    cancer_type = st.radio("Select Cancer Type:", ["Oral Cancer", "Leukemia"], horizontal=True)
+
+    col1, col2 = st.columns([1, 2])
+
+    # Oral Cancer Section
     if cancer_type == "Oral Cancer":
-        st.image("https://www.indiatoday.in/diabetes-myths-and-facts/assets/oral-cancer-2.jpg", caption="Oral Cancer Example", use_container_width=True)
+        with col1:
+            st.image("https://github.com/2006pritam/AI-Powered-Cancer-Detection/blob/main/photos/tongue-cancer%20(1).jpg?raw=true", 
+                     caption="Oral Cancer Example", use_container_width=True)
+        with col2:
+            st.subheader("👄 Oral Cancer Detection")
+            st.write("""
+            Oral cancer develops in the mouth region such as lips, tongue, gums, and inner lining of cheeks.  
+            
+            **Early Symptoms may include:**
+            - White or red patches inside the mouth  
+            - Persistent mouth sores  
+            - Swelling in jaw  
+            - Difficulty in swallowing  
+            """)
+
+    # Leukemia Section
     else:
-        st.image("https://www.researchgate.net/profile/Asma-Mahmoud-3/publication/331013169/figure/fig1/AS:726640285278209@1550481713902/Leukemia-cells-under-the-microscope.png", caption="Leukemia Example", use_container_width=True)
+        with col1:
+            st.image("https://github.com/2006pritam/AI-Powered-Cancer-Detection/blob/main/photos/LeukemiaWBC_share.jpg?raw=true", 
+                     caption="Leukemia Example", use_container_width=True)
+        with col2:
+            st.subheader("🩸 Leukemia Detection")
+            st.write("""
+            Leukemia is a type of blood cancer that originates in bone marrow and affects white blood cells.  
 
-with col2:
-    if cancer_type == "Oral Cancer":
-        st.subheader("👄 Oral Cancer Detection")
-        st.write("""
-        Oral cancer refers to cancer that develops in any part of the mouth 
-        (lips, gums, tongue, inner lining of cheeks, roof and floor of mouth).
-        
-        **Early Symptoms:**
-        - White or red patches inside the mouth  
-        - Persistent mouth sores  
-        - Swelling in jaw  
-        - Difficulty in swallowing  
-        """)
-    else:
-        st.subheader("🩸 Leukemia Detection")
-        st.write("""
-        Leukemia is a type of blood cancer that originates in the bone marrow 
-        and affects white blood cells.
+            **Early Symptoms may include:**
+            - Frequent infections  
+            - Fatigue and weakness  
+            - Unexplained weight loss  
+            - Easy bleeding or bruising  
+            """)
 
-        **Early Symptoms:**
-        - Frequent infections  
-        - Fatigue and weakness  
-        - Unexplained weight loss  
-        - Easy bleeding or bruising  
-        """)
+    st.markdown("---")
 
-st.markdown("---")
+    # Upload Section
+    st.subheader("📤 Upload Medical Image for Testing")
+    uploaded_file = st.file_uploader("Upload an image (JPG/PNG)", type=["jpg", "png", "jpeg"])
 
-# Upload Section
-st.subheader("📤 Upload Your Image")
-uploaded_file = st.file_uploader("Upload an image (JPG/PNG)", type=["jpg", "png", "jpeg"])
+    if uploaded_file is not None:
+        img = Image.open(uploaded_file)
+        st.image(img, caption="Uploaded Image", use_container_width=True)
+        st.success("✅ Image uploaded successfully! (Model prediction will be integrated here)")
 
-if uploaded_file is not None:
-    img = Image.open(uploaded_file)
-    st.image(img, caption="Uploaded Image", use_container_width=True)
-    st.success("✅ Image uploaded successfully!")
-    st.markdown("🚀 *AI model prediction will appear here in future integration.*")
-
-# Footer
-st.markdown("---")
-st.markdown("🔬 **Disclaimer:** This tool is for research & educational purposes only. Always consult a medical professional for accurate diagnosis.")
+    st.markdown("---")
+    st.markdown("🔬 **Disclaimer:** This is an internship project UI demo. The results shown here are for educational purposes only. Always consult medical professionals for real diagnosis.")
