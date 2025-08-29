@@ -1,5 +1,4 @@
 from streamlit_option_menu import option_menu
-from PIL import Image
 import streamlit as st
 import json
 import base64
@@ -9,7 +8,7 @@ import io
 st.set_page_config(page_title="Oral Cancer Detection",
                    page_icon="🦷", layout="wide")
 
-# Logo URL
+# Logo URL provided by the user
 LOGO_URL = "https://images.squarespace-cdn.com/content/v1/67463f2cc9d406701fbea2d3/e7053cca-131e-499b-b9aa-83d44838328b/caialogo_transparent.png"
 
 # Display the logo using the URL
@@ -45,15 +44,15 @@ def display_page(page_name):
         elif page_name == "About":
             import pages.About as about
             about.show_about()
+        elif page_name == "Model Comparison":
+            import pages.Model_comparison as model_comparison
+            model_comparison.show_model_comparison()
         elif page_name == "Oral Cancer":
             import pages.Oral_cancer as oral_cancer
             oral_cancer.show_oral_cancer()
         elif page_name == "Leukoplakia":
             import pages.Leukoplakia as leukoplakia
             leukoplakia.show_leukoplakia()
-        elif page_name == "Model Comparison":
-            import pages.Model_comparison as model_comparison
-            model_comparison.show_model_comparison()
         elif page_name == "Image Prediction":
             import pages.Image_prediction as image_prediction
             image_prediction.show_image_prediction()
@@ -79,12 +78,9 @@ with st.sidebar:
         orientation="vertical",
     )
 
-    # Note: Using "---" and different names for duplicate pages (e.g., "Image Prediction ") to create visual separation and unique keys.
+    # Note: Using "---" and different names for duplicate pages (e.g., "Image Prediction ")
+    # to create visual separation and unique keys.
     # The trailing space in "Image Prediction " makes it a unique option for Streamlit.
 
 # Call the function to display the selected page content
 display_page(selected_page)
-
----
-This video discusses creating a dynamic navigation menu, which is one way to manage complex sidebar navigation in Streamlit. [Streamlit Tutorial on a dynamic menu](https://www.youtube.com/watch?v=8b3pQhNV3aA)
-http://googleusercontent.com/youtube_content/2
