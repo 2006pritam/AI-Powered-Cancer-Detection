@@ -12,7 +12,7 @@ def show_about():
     st.write(
         "This application is an **internship project** developed at **Calcutta University**. "
         "The project's primary purpose is to leverage Artificial Intelligence and Machine Learning "
-        "to assist in the preliminary detection of oral cancer and leukoplakia, contributing to early diagnosis."
+        "to assist in the preliminary detection of oral cancer and leukemia Cancer, contributing to early diagnosis."
     )
     st.write(
         "The application serves as a proof of concept, demonstrating the power of modern "
