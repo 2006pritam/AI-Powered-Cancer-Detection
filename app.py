@@ -6,7 +6,7 @@ import base64
 import io
 
 # Set the page configuration with a tongue or mouth emoji as the page icon
-st.set_page_config(page_title="Oral Cancer Detection",
+st.set_page_config(page_title="Cancer Detection",
                    page_icon="🦷", layout="wide")
 
 # Logo URL provided by the user
