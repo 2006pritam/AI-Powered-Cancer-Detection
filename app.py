@@ -1,50 +1,65 @@
 import streamlit as st
+from streamlit_option_menu import option_menu
 
 # Sidebar Title
 st.sidebar.title("AI Cancer Detection System")
 
-# Main Navigation (Cancer Types)
-cancer_type = st.sidebar.radio(
-    "Select Cancer Type",
-    ["Oral Cancer", "Leukemia Cancer"]
+# First level menu (Cancer Types)
+cancer_type = option_menu(
+    menu_title=None,
+    options=["Oral Cancer Detection", "Leukemia Cancer Detection"],
+    icons=["capsule", "activity"],  # Choose icons from Bootstrap Icons
+    menu_icon="hospital",
+    default_index=0,
+    orientation="vertical"
 )
 
-# Sub-navigation for Oral Cancer
-if cancer_type == "Oral Cancer":
-    option = st.sidebar.radio(
-        "Oral Cancer Options",
-        ["Home", "About", "Model Comparison", "Image Prediction", "Real-Time Detection", "History"]
-    )
+# Show sub-menu for Oral Cancer
+if cancer_type == "Oral Cancer Detection":
+    with st.sidebar:
+        oral_option = option_menu(
+            menu_title="Oral Cancer Detection",
+            options=["Home", "About", "Model Comparison", "Image Prediction", "Real-Time Detection", "History"],
+            icons=["house", "info-circle", "list-task", "image", "camera-video", "clock-history"],
+            menu_icon="cast",
+            default_index=0
+        )
 
-    if option == "Home":
-        st.write("# 🏠 Oral Cancer Home")
-    elif option == "About":
+    # Display selected page
+    if oral_option == "Home":
+        st.write("# 🏠 Oral Cancer Home Page")
+    elif oral_option == "About":
         st.write("# ℹ️ About Oral Cancer Detection")
-    elif option == "Model Comparison":
-        st.write("# 📊 Model Comparison (Oral Cancer)")
-    elif option == "Image Prediction":
-        st.write("# 🖼️ Image Prediction (Oral Cancer)")
-    elif option == "Real-Time Detection":
-        st.write("# 🎥 Real-Time Detection (Oral Cancer)")
-    elif option == "History":
-        st.write("# 🕒 History (Oral Cancer)")
+    elif oral_option == "Model Comparison":
+        st.write("# 📊 Oral Cancer Model Comparison")
+    elif oral_option == "Image Prediction":
+        st.write("# 🖼️ Oral Cancer Image Prediction")
+    elif oral_option == "Real-Time Detection":
+        st.write("# 🎥 Oral Cancer Real-Time Detection")
+    elif oral_option == "History":
+        st.write("# 🕒 Oral Cancer Detection History")
 
-# Sub-navigation for Leukemia Cancer
-elif cancer_type == "Leukemia Cancer":
-    option = st.sidebar.radio(
-        "Leukemia Cancer Options",
-        ["Home", "About", "Model Comparison", "Image Prediction", "Real-Time Detection", "History"]
-    )
+# Show sub-menu for Leukemia Cancer
+elif cancer_type == "Leukemia Cancer Detection":
+    with st.sidebar:
+        leukemia_option = option_menu(
+            menu_title="Leukemia Cancer Detection",
+            options=["Home", "About", "Model Comparison", "Image Prediction", "Real-Time Detection", "History"],
+            icons=["house", "info-circle", "list-task", "image", "camera-video", "clock-history"],
+            menu_icon="cast",
+            default_index=0
+        )
 
-    if option == "Home":
-        st.write("# 🏠 Leukemia Cancer Home")
-    elif option == "About":
+    # Display selected page
+    if leukemia_option == "Home":
+        st.write("# 🏠 Leukemia Cancer Home Page")
+    elif leukemia_option == "About":
         st.write("# ℹ️ About Leukemia Cancer Detection")
-    elif option == "Model Comparison":
-        st.write("# 📊 Model Comparison (Leukemia Cancer)")
-    elif option == "Image Prediction":
-        st.write("# 🖼️ Image Prediction (Leukemia Cancer)")
-    elif option == "Real-Time Detection":
-        st.write("# 🎥 Real-Time Detection (Leukemia Cancer)")
-    elif option == "History":
-        st.write("# 🕒 History (Leukemia Cancer)")
+    elif leukemia_option == "Model Comparison":
+        st.write("# 📊 Leukemia Cancer Model Comparison")
+    elif leukemia_option == "Image Prediction":
+        st.write("# 🖼️ Leukemia Cancer Image Prediction")
+    elif leukemia_option == "Real-Time Detection":
+        st.write("# 🎥 Leukemia Cancer Real-Time Detection")
+    elif leukemia_option == "History":
+        st.write("# 🕒 Leukemia Cancer Detection History")
