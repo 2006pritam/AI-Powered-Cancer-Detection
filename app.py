@@ -15,7 +15,7 @@ LOGO_URL = "https://images.squarespace-cdn.com/content/v1/67463f2cc9d406701fbea2
 # Display the logo using the URL
 st.logo(LOGO_URL, size="large", link=None, icon_image=None)
 
-st.sidebar.title("Oral Cancer Detection")
+st.sidebar.title("Cancer Detection")
 
 # Add CSS for the spinner (can be customized further)
 st.markdown(
