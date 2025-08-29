@@ -15,7 +15,7 @@ LOGO_URL = "https://images.squarespace-cdn.com/content/v1/67463f2cc9d406701fbea2
 st.logo(LOGO_URL, size="large", link=None, icon_image=None)
 
 # Corrected sidebar title for better branding
-st.sidebar.title("Oral Cancer Detection App")
+st.sidebar.title("Cancer Detection App")
 
 # Add CSS for the spinner (can be customized further)
 st.markdown(
