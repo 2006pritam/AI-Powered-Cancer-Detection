@@ -1,10 +1,12 @@
 import streamlit as st
 
+st.set_page_config(page_title="AI Cancer Detection System", page_icon="🧪", layout="wide")
+
 # ------------------ Logo ------------------
 logo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZP24UBvfPqQX9tO8c7CrQxUw8Id9XV5Zu6Q&s"
-st.sidebar.image(logo_url, use_column_width=True)  # Logo at top of sidebar
 
-# Sidebar Title
+# Sidebar Title + Logo
+st.sidebar.image(logo_url, use_container_width=True)  # ✅ updated param
 st.sidebar.title("AI Cancer Detection System")
 
 # ------------------ Main Navigation ------------------
@@ -21,7 +23,7 @@ if cancer_type == "Oral Cancer":
     )
 
     if option == "Home":
-        st.image(logo_url, width=120)  # Show logo in main page too
+        st.image(logo_url, width=120)  # width is fine to keep here
         st.write("# 🏠 Oral Cancer Home")
     elif option == "About":
         st.write("# ℹ️ About Oral Cancer Detection")
