@@ -12,7 +12,7 @@ def show_about():
     st.write(
         "This application is an **internship project** developed at **Calcutta University**. "
         "The project's primary purpose is to leverage Artificial Intelligence and Machine Learning "
-        "to assist in the preliminary detection of oral cancer and leukemia Cancer, contributing to early diagnosis."
+        "to assist in the preliminary detection of oral cancer and leukemia cancer, contributing to early diagnosis."
     )
     st.write(
         "The application serves as a proof of concept, demonstrating the power of modern "
@@ -31,13 +31,10 @@ def show_about():
     with col2:
         st.subheader("Dr. Arpan Murmu Sir")
         st.write("A.I./M.L. and Machine Learning Researcher at Calcutta University.")
-        st.write("Dr. Arpan Murmu Sir 's expertise in AI and Machine Learning was instrumental in guiding the development "
+        st.write("Dr. Arpan Murmu Sir's expertise in AI and Machine Learning was instrumental in guiding the development "
                  "of the project's core algorithms and model architecture.")
 
-        # --- Adjusted social media icons and links to be closer ---
         st.markdown("Connect with Dr. Arpan Murmu Sir:")
-        
-        # Using a single column with inline markdown for closer icons
         st.markdown(
             f"""
             <a href="http://linkedin.com/in/arpan-murmu-201467148/?originalSubdomain=in" target="_blank">
@@ -53,5 +50,40 @@ def show_about():
     st.markdown("---")
 
     st.header("Developed by")
-    st.write("This project was developed by students as part of their academic internship.")
-    st.info("Developed by: [Your Name(s) Here]")
+    st.write("This project was developed by students from the **Supreme Institute of Management and Technology** as part of their academic internship.")
+
+    # Students' details
+    students = [
+        {"name": "Rishav Paul", "skills": "Web Developer, Python Developer, AI/ML Learner"},
+        {"name": "Soumen Pal", "skills": "Web Developer, Python Developer, AI/ML Learner"},
+        {"name": "Pritam Kumar Modak", "skills": "Web Developer, Python Developer, AI/ML Learner"},
+        {"name": "Sohini Pal", "skills": "Web Developer, Python Developer, AI/ML Learner"},
+        {"name": "Roni Ghosh", "skills": "Web Developer, Python Developer, AI/ML Learner"},
+    ]
+
+    for student in students:
+        st.subheader(student["name"])
+        col_img, col_info = st.columns([1, 4])
+        
+        with col_img:
+            # Placeholder for student profile picture
+            st.image("https://placehold.co/100x100?text=Profile", use_container_width=True)
+            
+        with col_info:
+            st.write(f"**Institute:** Supreme Institute of Management and Technology")
+            st.write(f"**Skills:** {student['skills']}")
+            
+            # --- Placeholder for social media links with icons ---
+            st.markdown(
+                f"""
+                <a href="#" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="25" style="margin-right: 10px;">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="25">
+                </a>
+                """,
+                unsafe_allow_html=True
+            )
+    st.markdown("---")
+    st.warning("Please replace the placeholder profile images and social media URLs for each student.")
