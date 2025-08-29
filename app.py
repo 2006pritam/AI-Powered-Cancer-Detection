@@ -6,16 +6,16 @@ import base64
 import io
 
 # Set the page configuration with a tongue or mouth emoji as the page icon
-st.set_page_config(page_title="Cancer Detection",
+st.set_page_config(page_title="Oral Cancer Detection",
                    page_icon="🦷", layout="wide")
 
-# Logo URL provided by the user
+# Logo URL
 LOGO_URL = "https://images.squarespace-cdn.com/content/v1/67463f2cc9d406701fbea2d3/e7053cca-131e-499b-b9aa-83d44838328b/caialogo_transparent.png"
 
 # Display the logo using the URL
 st.logo(LOGO_URL, size="large", link=None, icon_image=None)
 
-st.sidebar.title("Cancer Detection")
+st.sidebar.title("Cancer Detection App")
 
 # Add CSS for the spinner (can be customized further)
 st.markdown(
@@ -29,7 +29,7 @@ st.markdown(
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;  /* Full height for centering */
+        height: 100vh;
     }
     </style>
     """,
@@ -45,6 +45,12 @@ def display_page(page_name):
         elif page_name == "About":
             import pages.About as about
             about.show_about()
+        elif page_name == "Oral Cancer":
+            import pages.Oral_cancer as oral_cancer
+            oral_cancer.show_oral_cancer()
+        elif page_name == "Leukoplakia":
+            import pages.Leukoplakia as leukoplakia
+            leukoplakia.show_leukoplakia()
         elif page_name == "Model Comparison":
             import pages.Model_comparison as model_comparison
             model_comparison.show_model_comparison()
@@ -57,25 +63,28 @@ def display_page(page_name):
         elif page_name == "History":
             import pages.History as history
             history.show_history()
-        elif page_name == "Oral Cancer":
-            import pages.Oral_cancer as oral_cancer
-            oral_cancer.show_oral_cancer()
-        elif page_name == "Leukoplakia":
-            import pages.Leukoplakia as leukoplakia
-            leukoplakia.show_leukoplakia()
 
 # Sidebar for navigation using option_menu
 with st.sidebar:
     selected_page = option_menu(
         menu_title=None,
-        options=["Home", "About", "Model Comparison", "Image Prediction",
-                 "Real-Time Detection", "History", "Oral Cancer", "Leukoplakia"],
-        icons=["house", "info-circle", "list-task", "image", "camera-video",
-               "clock-history", "mask", "disease"],
+        options=["Home", "About", "Model Comparison", "---",
+                 "Oral Cancer", "Image Prediction", "Real-Time Detection", "---",
+                 "Leukoplakia", "Image Prediction ", "History"],
+        icons=["house", "info-circle", "list-task", "caret-right",
+               "mask", "image", "camera-video", "caret-right",
+               "disease", "image", "clock-history"],
         menu_icon="cast",
         default_index=0,
         orientation="vertical",
     )
 
+    # Note: Using "---" and different names for duplicate pages (e.g., "Image Prediction ") to create visual separation and unique keys.
+    # The trailing space in "Image Prediction " makes it a unique option for Streamlit.
+
 # Call the function to display the selected page content
 display_page(selected_page)
+
+---
+This video discusses creating a dynamic navigation menu, which is one way to manage complex sidebar navigation in Streamlit. [Streamlit Tutorial on a dynamic menu](https://www.youtube.com/watch?v=8b3pQhNV3aA)
+http://googleusercontent.com/youtube_content/2
