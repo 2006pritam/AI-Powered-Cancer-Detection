@@ -45,9 +45,6 @@ def display_page(page_name):
         elif page_name == "About":
             import pages.About as about
             about.show_about()
-        elif page_name == "Model Comparison":
-            import pages.Model_comparison as model_comparison
-            model_comparison.show_model_comparison()
         elif page_name == "Oral Cancer":
             import pages.Oral_cancer as oral_cancer
             oral_cancer.show_oral_cancer()
@@ -71,10 +68,10 @@ def display_page(page_name):
 with st.sidebar:
     selected_page = option_menu(
         menu_title=None,
-        options=["Home", "About", "Model Comparison", "---",
+        options=["Home", "About", "---",
                  "Oral Cancer", "Oral Cancer - Image Prediction", "Oral Cancer - Real-Time Detection", "---",
                  "Leukoplakia", "Leukoplakia - Image Prediction", "Leukoplakia - History"],
-        icons=["house", "info-circle", "list-task", "caret-right",
+        icons=["house", "info-circle", "caret-right",
                "mask", "image", "camera-video", "caret-right",
                "disease", "image", "clock-history"],
         menu_icon="cast",
