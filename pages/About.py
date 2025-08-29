@@ -29,13 +29,13 @@ def show_about():
                  caption="Dr. Arpan Murmu Sir", use_container_width=True)
     
     with col2:
-        st.subheader("Dr. Arpan Murmu")
+        st.subheader("Dr. Arpan Murmu Sir")
         st.write("A.I./M.L. and Machine Learning Researcher at Calcutta University.")
-        st.write("Dr. Murmu's expertise in AI and Machine Learning was instrumental in guiding the development "
+        st.write("Dr. Arpan Murmu Sir 's expertise in AI and Machine Learning was instrumental in guiding the development "
                  "of the project's core algorithms and model architecture.")
 
         # --- Add social media icons and links here ---
-        st.write("Connect with Dr. Murmu:")
+        st.write("Connect with Dr. Arpan Murmu Sir:")
         link_col1, link_col2, _ = st.columns([1, 1, 5])
         
         with link_col1:
@@ -46,7 +46,7 @@ def show_about():
         
         with link_col2:
             st.markdown(
-                f"[<img src='https://static-00.iconduck.com/assets.00/google-scholar-icon-2048x1674-32l91z7a.png' width='30'>](https://scholar.google.com/citations?user=Gb5CkgwAAAAJ&hl=en)",
+                f"[<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/2048px-Google_Scholar_logo.svg.png' width='30'>](https://scholar.google.com/citations?user=Gb5CkgwAAAAJ&hl=en)",
                 unsafe_allow_html=True
             )
 
