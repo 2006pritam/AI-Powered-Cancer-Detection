@@ -1,6 +1,10 @@
 from streamlit_option_menu import option_menu
 from PIL import Image
 import streamlit as st
+# The streamlit_lottie library was mentioned in your original prompt,
+# but not used in the provided snippets. I'm commenting it out if not needed.
+# If you plan to use Lottie animations, uncomment the line below.
+# from streamlit_lottie import st_lottie
 import json
 import base64
 import io
@@ -11,13 +15,14 @@ st.set_page_config(page_title="Oral Cancer Detection",
 
 # Load and display logo
 try:
+    # Ensure 'logo1.png' exists in the 'assets' folder
     st.logo("./assets/logo1.png", size="large", link=None, icon_image=None)
 except FileNotFoundError:
-    st.warning("Logo file not found. Please ensure 'assets/logo1.png' exists.")
+    st.warning("Logo file not found. Please ensure 'assets/logo1.png' exists in your project.")
 
 st.sidebar.title("Oral Cancer Detection")
 
-# Add CSS for the spinner
+# Add CSS for the spinner (can be customized further)
 st.markdown(
     """
     <style>
@@ -36,9 +41,10 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Function to display the selected page
+# Function to display the selected page content
 def display_page(page_name):
-    with st.spinner("Loading..."):
+    with st.spinner(f"Loading {page_name}..."): # Added page_name to spinner message
+        # Import and display content for each page
         if page_name == "Home":
             import pages.Home as home
             home.show_home_content()
@@ -67,15 +73,15 @@ def display_page(page_name):
 # Sidebar for navigation using option_menu
 with st.sidebar:
     selected_page = option_menu(
-        menu_title=None,
+        menu_title=None,  # No title for the menu itself
         options=["Home", "About", "Model Comparison", "Image Prediction",
-                 "Real-Time Detection", "History", "Oral Cancer", "Leukoplakia"],
+                 "Real-Time Detection", "History", "Oral Cancer", "Leukoplakia"], # Added new pages
         icons=["house", "info-circle", "list-task", "image", "camera-video",
-               "clock-history", "mask", "disease"],
-        menu_icon="cast",
-        default_index=0,
-        orientation="vertical",
+               "clock-history", "mask", "disease"], # Icons for each page, 'mask' and 'disease' for new pages
+        menu_icon="cast",  # Main menu icon
+        default_index=0,  # Home page selected by default
+        orientation="vertical",  # Vertical menu in sidebar
     )
 
-# Call the function to display the selected page
+# Call the function to display the selected page content
 display_page(selected_page)
