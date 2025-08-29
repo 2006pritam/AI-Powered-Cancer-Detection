@@ -44,9 +44,6 @@ def display_page(page_name):
         elif page_name == "About":
             import pages.About as about
             about.show_about()
-        elif page_name == "Model Comparison":
-            import pages.Model_comparison as model_comparison
-            model_comparison.show_model_comparison()
         elif page_name == "Oral Cancer":
             import pages.Oral_cancer as oral_cancer
             oral_cancer.show_oral_cancer()
