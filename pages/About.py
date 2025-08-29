@@ -34,21 +34,21 @@ def show_about():
         st.write("Dr. Arpan Murmu Sir 's expertise in AI and Machine Learning was instrumental in guiding the development "
                  "of the project's core algorithms and model architecture.")
 
-        # --- Add social media icons and links here ---
-        st.write("Connect with Dr. Arpan Murmu Sir:")
-        link_col1, link_col2, _ = st.columns([1, 1, 5])
+        # --- Adjusted social media icons and links to be closer ---
+        st.markdown("Connect with Dr. Arpan Murmu Sir:")
         
-        with link_col1:
-            st.markdown(
-                f"[<img src='https://cdn-icons-png.flaticon.com/512/174/174857.png' width='30'>](http://linkedin.com/in/arpan-murmu-201467148/?originalSubdomain=in)",
-                unsafe_allow_html=True
-            )
-        
-        with link_col2:
-            st.markdown(
-                f"[<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/2048px-Google_Scholar_logo.svg.png' width='30'>](https://scholar.google.com/citations?user=Gb5CkgwAAAAJ&hl=en)",
-                unsafe_allow_html=True
-            )
+        # Using a single column with inline markdown for closer icons
+        st.markdown(
+            f"""
+            <a href="http://linkedin.com/in/arpan-murmu-201467148/?originalSubdomain=in" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30" style="margin-right: 15px;">
+            </a>
+            <a href="https://scholar.google.com/citations?user=Gb5CkgwAAAAJ&hl=en" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/2048px-Google_Scholar_logo.svg.png" width="30">
+            </a>
+            """,
+            unsafe_allow_html=True
+        )
 
     st.markdown("---")
 
