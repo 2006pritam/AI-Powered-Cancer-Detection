@@ -15,7 +15,7 @@ def show_home_content():
     st.header("What We Detect")
     
     st.subheader("Oral Cancer")
-    st.image("https://placehold.co/600x250/FF6347/FFFFFF?text=Oral+Cancer+Image", caption="Illustrative example of Oral Cancer", use_container_width=True)
+    st.image("https://images.onlymyhealth.com//imported/images/2023/May/24_May_2023/Main_cc.jpg", caption="Oral Cancer Lesion", use_container_width=True)
     st.write(
         "Oral cancer, also known as mouth cancer, can affect any part of the mouth. "
         "Early signs can often be subtle, but timely detection is critical for successful treatment. "
@@ -24,7 +24,7 @@ def show_home_content():
     st.markdown("---")
 
     st.subheader("Leukoplakia")
-    st.image("https://placehold.co/600x250/98FB98/000000?text=Leukoplakia+Image", caption="Illustrative example of Leukoplakia", use_container_width=True)
+    st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7veuhYSKTkntSAGGDdf3DoDesWkL5utg6k-XPMtMw_XiQYZGxe09x0d4jtRZSAsFJ4ko&usqp=CAU", caption="Leukoplakia Lesion", use_container_width=True)
     st.write(
         "Leukoplakia presents as **thickened, white patches** on the mucous membranes of the mouth. "
         "While many cases are benign, it is considered a **precancerous condition**, meaning it has the potential to develop into cancer. "
@@ -37,13 +37,11 @@ def show_home_content():
         "Our detection system is built upon a foundation of cutting-edge machine learning and deep learning technologies:"
     )
 
-    # Use st.columns to create a three-column layout at the same level
     col1, col2, col3 = st.columns(3)
 
     with col1:
         st.subheader("PyTorch")
-        # Use a fixed width to match the style in your image
-        st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhyOAyEZ7rQuXiP6Kxx0B9y_aJ59fRniUVRw&s", width=80)
+        st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhyOAyEZ7rQuXiP6Kxx0B9y_aJ59fRniUVRw&s", caption="PyTorch Icon", width=80)
         st.write(
             "The core of our **deep learning models** is built using **PyTorch**, a powerful open-source machine learning framework. "
             "It enables us to develop and train complex neural networks for highly accurate image analysis."
@@ -51,8 +49,7 @@ def show_home_content():
 
     with col2:
         st.subheader("Google Colab")
-        # Use a fixed width to match the style in your image
-        st.image("https://img.icons8.com/color/96/google-colab.png", width=80)
+        st.image("https://img.icons8.com/color/96/google-colab.png", caption="Google Colab Icon", width=80)
         st.write(
             "Development and experimentation were primarily conducted on **Google Colaboratory (Colab)**. "
             "This cloud-based platform provided the necessary computational resources, including GPUs, for efficient model training and prototyping."
@@ -60,8 +57,7 @@ def show_home_content():
 
     with col3:
         st.subheader("Scikit-learn & NumPy")
-        # Use a fixed width to match the style in your image
-        st.image("https://www.vhv.rs/dpng/d/208-2081341_scikit-learn-logo-png-transparent-png.png", width=120)
+        st.image("https://www.vhv.rs/dpng/d/208-2081341_scikit-learn-logo-png-transparent-png.png", caption="Scikit-learn Icon", width=120)
         st.write(
             "For classical machine learning tasks, data preprocessing, and numerical operations, we leverage **scikit-learn** "
             "(including algorithms like **K-Nearest Neighbors (KNN)** and **K-Means Clustering**) alongside **NumPy** for high-performance array computing. "
