@@ -33,7 +33,23 @@ def show_about():
         st.write("A.I./M.L. and Machine Learning Researcher at Calcutta University.")
         st.write("Dr. Murmu's expertise in AI and Machine Learning was instrumental in guiding the development "
                  "of the project's core algorithms and model architecture.")
-    
+
+        # --- Add social media icons and links here ---
+        st.write("Connect with Dr. Murmu:")
+        link_col1, link_col2, _ = st.columns([1, 1, 5])
+        
+        with link_col1:
+            st.markdown(
+                f"[<img src='https://cdn-icons-png.flaticon.com/512/174/174857.png' width='30'>](http://linkedin.com/in/arpan-murmu-201467148/?originalSubdomain=in)",
+                unsafe_allow_html=True
+            )
+        
+        with link_col2:
+            st.markdown(
+                f"[<img src='https://static-00.iconduck.com/assets.00/google-scholar-icon-2048x1674-32l91z7a.png' width='30'>](https://scholar.google.com/citations?user=Gb5CkgwAAAAJ&hl=en)",
+                unsafe_allow_html=True
+            )
+
     st.markdown("---")
 
     st.header("Developed by")
