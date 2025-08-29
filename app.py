@@ -1,15 +1,19 @@
 import streamlit as st
 
+# ------------------ Logo ------------------
+logo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZP24UBvfPqQX9tO8c7CrQxUw8Id9XV5Zu6Q&s"
+st.sidebar.image(logo_url, use_column_width=True)  # Logo at top of sidebar
+
 # Sidebar Title
 st.sidebar.title("AI Cancer Detection System")
 
-# Main Navigation (Cancer Types)
+# ------------------ Main Navigation ------------------
 cancer_type = st.sidebar.radio(
     "Select Cancer Type",
     ["Oral Cancer", "Leukemia Cancer"]
 )
 
-# Sub-navigation for Oral Cancer
+# ------------------ Oral Cancer ------------------
 if cancer_type == "Oral Cancer":
     option = st.sidebar.radio(
         "Oral Cancer Options",
@@ -17,6 +21,7 @@ if cancer_type == "Oral Cancer":
     )
 
     if option == "Home":
+        st.image(logo_url, width=120)  # Show logo in main page too
         st.write("# 🏠 Oral Cancer Home")
     elif option == "About":
         st.write("# ℹ️ About Oral Cancer Detection")
@@ -29,7 +34,7 @@ if cancer_type == "Oral Cancer":
     elif option == "History":
         st.write("# 🕒 History (Oral Cancer)")
 
-# Sub-navigation for Leukemia Cancer
+# ------------------ Leukemia Cancer ------------------
 elif cancer_type == "Leukemia Cancer":
     option = st.sidebar.radio(
         "Leukemia Cancer Options",
@@ -37,6 +42,7 @@ elif cancer_type == "Leukemia Cancer":
     )
 
     if option == "Home":
+        st.image(logo_url, width=120)
         st.write("# 🏠 Leukemia Cancer Home")
     elif option == "About":
         st.write("# ℹ️ About Leukemia Cancer Detection")
