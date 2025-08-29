@@ -57,7 +57,7 @@ def show_home_content():
 
     with col3:
         st.subheader("Scikit-learn & NumPy")
-        st.image("https://www.vhv.rs/dpng/d/208-2081341_scikit-learn-logo-png-transparent-png.png", caption="Scikit-learn Icon", use_container_width=True)
+        st.image("https://d3f1iyfxxz8i1e.cloudfront.net/courses/course_image/da615a681b8d.png", caption="Scikit-learn Icon", use_container_width=True)
         st.write(
             "For classical machine learning tasks, data preprocessing, and numerical operations, we leverage **scikit-learn** "
             "(including algorithms like **K-Nearest Neighbors (KNN)** and **K-Means Clustering**) alongside **NumPy** for high-performance array computing. "
