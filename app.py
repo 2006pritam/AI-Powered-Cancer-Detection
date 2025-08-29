@@ -64,7 +64,7 @@ def display_page(page_name):
 with st.sidebar:
     selected_page = option_menu(
         menu_title=None,
-        options=["Home", "About", "Model Comparison", "---",
+        options=["Home", "About", "---",
                  "Oral Cancer", "Image Prediction", "Real-Time Detection", "---",
                  "Leukoplakia", "Image Prediction ", "History"],
         icons=["house", "info-circle", "list-task", "caret-right",
