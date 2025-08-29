@@ -15,7 +15,6 @@ def show_home_content():
     st.header("What We Detect")
     
     st.subheader("Oral Cancer")
-    # Corrected parameter here: use_column_width -> use_container_width
     st.image("https://placehold.co/600x250/FF6347/FFFFFF?text=Oral+Cancer+Image", caption="Illustrative example of Oral Cancer", use_container_width=True)
     st.write(
         "Oral cancer, also known as mouth cancer, can affect any part of the mouth. "
@@ -25,7 +24,6 @@ def show_home_content():
     st.markdown("---")
 
     st.subheader("Leukoplakia")
-    # Corrected parameter here: use_column_width -> use_container_width
     st.image("https://placehold.co/600x250/98FB98/000000?text=Leukoplakia+Image", caption="Illustrative example of Leukoplakia", use_container_width=True)
     st.write(
         "Leukoplakia presents as **thickened, white patches** on the mucous membranes of the mouth. "
@@ -43,8 +41,7 @@ def show_home_content():
 
     with col1:
         st.subheader("PyTorch")
-        # Corrected parameter here: use_column_width -> use_container_width
-        st.image("https://img.icons8.com/color/96/pytorch.png", caption="PyTorch Icon", use_container_width=True)
+        st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhyOAyEZ7rQuXiP6Kxx0B9y_aJ59fRniUVRw&s", caption="PyTorch Icon", use_container_width=True)
         st.write(
             "The core of our **deep learning models** is built using **PyTorch**, a powerful open-source machine learning framework. "
             "It enables us to develop and train complex neural networks for highly accurate image analysis."
@@ -52,7 +49,6 @@ def show_home_content():
 
     with col2:
         st.subheader("Google Colab")
-        # Corrected parameter here: use_column_width -> use_container_width
         st.image("https://img.icons8.com/color/96/google-colab.png", caption="Google Colab Icon", use_container_width=True)
         st.write(
             "Development and experimentation were primarily conducted on **Google Colaboratory (Colab)**. "
@@ -61,8 +57,7 @@ def show_home_content():
 
     with col3:
         st.subheader("Scikit-learn & NumPy")
-        # Corrected parameter here: use_column_width -> use_container_width
-        st.image("https://img.icons8.com/color/96/scikit-learn.png", caption="Scikit-learn Icon", use_container_width=True)
+        st.image("https://www.vhv.rs/dpng/d/208-2081341_scikit-learn-logo-png-transparent-png.png", caption="Scikit-learn Icon", use_container_width=True)
         st.write(
             "For classical machine learning tasks, data preprocessing, and numerical operations, we leverage **scikit-learn** "
             "(including algorithms like **K-Nearest Neighbors (KNN)** and **K-Means Clustering**) alongside **NumPy** for high-performance array computing. "
