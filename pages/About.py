@@ -26,7 +26,7 @@ def show_about():
     
     with col1:
         st.image("https://media.licdn.com/dms/image/v2/D4D22AQFn27VYsiAobw/feedshare-shrink_800/feedshare-shrink_800/0/1684152138886?e=2147483647&v=beta&t=Ooow-22aLZXo8ZCVTnEquTiYQHnYmzcv7Ps1mG-ILHs", 
-                 caption="Dr. Arpan Murmu", use_container_width=True)
+                 caption="Dr. Arpan Murmu Sir", use_container_width=True)
     
     with col2:
         st.subheader("Dr. Arpan Murmu")
