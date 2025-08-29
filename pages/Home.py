@@ -37,11 +37,13 @@ def show_home_content():
         "Our detection system is built upon a foundation of cutting-edge machine learning and deep learning technologies:"
     )
 
+    # Use st.columns to create a three-column layout at the same level
     col1, col2, col3 = st.columns(3)
 
     with col1:
         st.subheader("PyTorch")
-        st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhyOAyEZ7rQuXiP6Kxx0B9y_aJ59fRniUVRw&s", caption="PyTorch Icon", use_container_width=True)
+        # Use a fixed width to match the style in your image
+        st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhyOAyEZ7rQuXiP6Kxx0B9y_aJ59fRniUVRw&s", width=80)
         st.write(
             "The core of our **deep learning models** is built using **PyTorch**, a powerful open-source machine learning framework. "
             "It enables us to develop and train complex neural networks for highly accurate image analysis."
@@ -49,7 +51,8 @@ def show_home_content():
 
     with col2:
         st.subheader("Google Colab")
-        st.image("https://img.icons8.com/color/96/google-colab.png", caption="Google Colab Icon", use_container_width=True)
+        # Use a fixed width to match the style in your image
+        st.image("https://img.icons8.com/color/96/google-colab.png", width=80)
         st.write(
             "Development and experimentation were primarily conducted on **Google Colaboratory (Colab)**. "
             "This cloud-based platform provided the necessary computational resources, including GPUs, for efficient model training and prototyping."
@@ -57,7 +60,8 @@ def show_home_content():
 
     with col3:
         st.subheader("Scikit-learn & NumPy")
-        st.image("https://d3f1iyfxxz8i1e.cloudfront.net/courses/course_image/da615a681b8d.png", caption="Scikit-learn Icon", use_container_width=True)
+        # Use a fixed width to match the style in your image
+        st.image("https://www.vhv.rs/dpng/d/208-2081341_scikit-learn-logo-png-transparent-png.png", width=120)
         st.write(
             "For classical machine learning tasks, data preprocessing, and numerical operations, we leverage **scikit-learn** "
             "(including algorithms like **K-Nearest Neighbors (KNN)** and **K-Means Clustering**) alongside **NumPy** for high-performance array computing. "
