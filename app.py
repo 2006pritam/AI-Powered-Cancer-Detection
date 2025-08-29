@@ -14,7 +14,8 @@ LOGO_URL = "https://images.squarespace-cdn.com/content/v1/67463f2cc9d406701fbea2
 # Display the logo using the URL
 st.logo(LOGO_URL, size="large", link=None, icon_image=None)
 
-st.sidebar.title("Cancer Detection App")
+# Corrected sidebar title for better branding
+st.sidebar.title("Oral Cancer Detection App")
 
 # Add CSS for the spinner (can be customized further)
 st.markdown(
@@ -44,19 +45,25 @@ def display_page(page_name):
         elif page_name == "About":
             import pages.About as about
             about.show_about()
+        elif page_name == "Model Comparison":
+            import pages.Model_comparison as model_comparison
+            model_comparison.show_model_comparison()
         elif page_name == "Oral Cancer":
             import pages.Oral_cancer as oral_cancer
             oral_cancer.show_oral_cancer()
         elif page_name == "Leukoplakia":
             import pages.Leukoplakia as leukoplakia
             leukoplakia.show_leukoplakia()
-        elif page_name == "Image Prediction":
+        elif page_name == "Oral Cancer - Image Prediction":
             import pages.Image_prediction as image_prediction
             image_prediction.show_image_prediction()
-        elif page_name == "Real-Time Detection":
+        elif page_name == "Oral Cancer - Real-Time Detection":
             import pages.Real_time_detection as real_time_detection
             real_time_detection.show_real_time_detection()
-        elif page_name == "History":
+        elif page_name == "Leukoplakia - Image Prediction":
+            import pages.Image_prediction as image_prediction
+            image_prediction.show_image_prediction()
+        elif page_name == "Leukoplakia - History":
             import pages.History as history
             history.show_history()
 
@@ -64,9 +71,9 @@ def display_page(page_name):
 with st.sidebar:
     selected_page = option_menu(
         menu_title=None,
-        options=["Home", "About", "---",
-                 "Oral Cancer", "Image Prediction", "Real-Time Detection", "---",
-                 "Leukoplakia", "Image Prediction ", "History"],
+        options=["Home", "About", "Model Comparison", "---",
+                 "Oral Cancer", "Oral Cancer - Image Prediction", "Oral Cancer - Real-Time Detection", "---",
+                 "Leukoplakia", "Leukoplakia - Image Prediction", "Leukoplakia - History"],
         icons=["house", "info-circle", "list-task", "caret-right",
                "mask", "image", "camera-video", "caret-right",
                "disease", "image", "clock-history"],
@@ -74,10 +81,6 @@ with st.sidebar:
         default_index=0,
         orientation="vertical",
     )
-
-    # Note: Using "---" and different names for duplicate pages (e.g., "Image Prediction ")
-    # to create visual separation and unique keys.
-    # The trailing space in "Image Prediction " makes it a unique option for Streamlit.
 
 # Call the function to display the selected page content
 display_page(selected_page)
