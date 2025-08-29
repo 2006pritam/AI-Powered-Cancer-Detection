@@ -1,58 +1,82 @@
+from streamlit_option_menu import option_menu
+from PIL import Image
 import streamlit as st
+from streamlit_lottie import st_lottie
+import json
+import base64
+import io
 
-st.set_page_config(page_title="AI Cancer Detection System", page_icon="🧪", layout="wide")
+# Set the page configuration with a tongue or mouth emoji as the page icon
+st.set_page_config(page_title="Oral Cancer Detection",
+                   page_icon="🦷", layout="wide")
 
-# ------------------ Logo ------------------
-logo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZP24UBvfPqQX9tO8c7CrQxUw8Id9XV5Zu6Q&s"
+# Load and display logo
+try:
+    st.logo("./assets/logo1.png", size="large", link=None, icon_image=None)
+except FileNotFoundError:
+    st.warning("Logo file not found. Please ensure 'assets/logo1.png' exists.")
 
-# Sidebar Title + Logo
-st.sidebar.image(logo_url, use_container_width=True)  # ✅ updated param
-st.sidebar.title("AI Cancer Detection System")
+st.sidebar.title("Oral Cancer Detection")
 
-# ------------------ Main Navigation ------------------
-cancer_type = st.sidebar.radio(
-    "Select Cancer Type",
-    ["Oral Cancer", "Leukemia Cancer"]
+# Add CSS for the spinner
+st.markdown(
+    """
+    <style>
+    .streamlit-spinner {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;  /* Full height for centering */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
 )
 
-# ------------------ Oral Cancer ------------------
-if cancer_type == "Oral Cancer":
-    option = st.sidebar.radio(
-        "Oral Cancer Options",
-        ["Home", "About", "Model Comparison", "Image Prediction", "Real-Time Detection", "History"]
+# Function to display the selected page
+def display_page(page_name):
+    with st.spinner("Loading..."):
+        if page_name == "Home":
+            import pages.Home as home
+            home.show_home_content()
+        elif page_name == "About":
+            import pages.About as about
+            about.show_about()
+        elif page_name == "Model Comparison":
+            import pages.Model_comparison as model_comparison
+            model_comparison.show_model_comparison()
+        elif page_name == "Image Prediction":
+            import pages.Image_prediction as image_prediction
+            image_prediction.show_image_prediction()
+        elif page_name == "Real-Time Detection":
+            import pages.Real_time_detection as real_time_detection
+            real_time_detection.show_real_time_detection()
+        elif page_name == "History":
+            import pages.History as history
+            history.show_history()
+        elif page_name == "Oral Cancer":
+            import pages.Oral_cancer as oral_cancer
+            oral_cancer.show_oral_cancer()
+        elif page_name == "Leukoplakia":
+            import pages.Leukoplakia as leukoplakia
+            leukoplakia.show_leukoplakia()
+
+# Sidebar for navigation using option_menu
+with st.sidebar:
+    selected_page = option_menu(
+        menu_title=None,
+        options=["Home", "About", "Model Comparison", "Image Prediction",
+                 "Real-Time Detection", "History", "Oral Cancer", "Leukoplakia"],
+        icons=["house", "info-circle", "list-task", "image", "camera-video",
+               "clock-history", "mask", "disease"],
+        menu_icon="cast",
+        default_index=0,
+        orientation="vertical",
     )
 
-    if option == "Home":
-        st.image(logo_url, width=120)  # width is fine to keep here
-        st.write("# 🏠 Oral Cancer Home")
-    elif option == "About":
-        st.write("# ℹ️ About Oral Cancer Detection")
-    elif option == "Model Comparison":
-        st.write("# 📊 Model Comparison (Oral Cancer)")
-    elif option == "Image Prediction":
-        st.write("# 🖼️ Image Prediction (Oral Cancer)")
-    elif option == "Real-Time Detection":
-        st.write("# 🎥 Real-Time Detection (Oral Cancer)")
-    elif option == "History":
-        st.write("# 🕒 History (Oral Cancer)")
-
-# ------------------ Leukemia Cancer ------------------
-elif cancer_type == "Leukemia Cancer":
-    option = st.sidebar.radio(
-        "Leukemia Cancer Options",
-        ["Home", "About", "Model Comparison", "Image Prediction", "Real-Time Detection", "History"]
-    )
-
-    if option == "Home":
-        st.image(logo_url, width=120)
-        st.write("# 🏠 Leukemia Cancer Home")
-    elif option == "About":
-        st.write("# ℹ️ About Leukemia Cancer Detection")
-    elif option == "Model Comparison":
-        st.write("# 📊 Model Comparison (Leukemia Cancer)")
-    elif option == "Image Prediction":
-        st.write("# 🖼️ Image Prediction (Leukemia Cancer)")
-    elif option == "Real-Time Detection":
-        st.write("# 🎥 Real-Time Detection (Leukemia Cancer)")
-    elif option == "History":
-        st.write("# 🕒 History (Leukemia Cancer)")
+# Call the function to display the selected page
+display_page(selected_page)
