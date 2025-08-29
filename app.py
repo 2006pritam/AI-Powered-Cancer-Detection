@@ -57,10 +57,10 @@ def display_page(page_name):
         elif page_name == "Oral Cancer - Real-Time Detection":
             import pages.Real_time_detection as real_time_detection
             real_time_detection.show_real_time_detection()
-        elif page_name == "Leukoplakia - Image Prediction":
+        elif page_name == "leukemia - Image Prediction":
             import pages.Image_prediction as image_prediction
             image_prediction.show_image_prediction()
-        elif page_name == "Leukoplakia - History":
+        elif page_name == "leukemia - History":
             import pages.History as history
             history.show_history()
 
@@ -70,7 +70,7 @@ with st.sidebar:
         menu_title=None,
         options=["Home", "About", "---",
                  "Oral Cancer", "Oral Cancer - Image Prediction", "Oral Cancer - Real-Time Detection", "---",
-                 "Leukoplakia", "Leukoplakia - Image Prediction", "Leukoplakia - History"],
+                 "leukemia", "leukemia - Image Prediction", "leukemia - History"],
         icons=["house", "info-circle", "caret-right",
                "mask", "image", "camera-video", "caret-right",
                "disease", "image", "clock-history"],
