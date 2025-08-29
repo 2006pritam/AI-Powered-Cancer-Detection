@@ -6,28 +6,42 @@ st.sidebar.title("AI Cancer Detection System")
 
 # First level menu (Cancer Types)
 cancer_type = option_menu(
-    menu_title=None,
+    menu_title="Select Cancer Type",
     options=["Oral Cancer Detection", "Leukemia Cancer Detection"],
-    icons=["capsule", "activity"],  # Choose icons from Bootstrap Icons
+    icons=["capsule", "activity"],  # Bootstrap icons
     menu_icon="hospital",
     default_index=0,
     orientation="vertical"
 )
 
-# Show sub-menu for Oral Cancer
+# ------------------ Oral Cancer Menu ------------------
 if cancer_type == "Oral Cancer Detection":
     with st.sidebar:
         oral_option = option_menu(
             menu_title="Oral Cancer Detection",
-            options=["Home", "About", "Model Comparison", "Image Prediction", "Real-Time Detection", "History"],
-            icons=["house", "info-circle", "list-task", "image", "camera-video", "clock-history"],
+            options=[
+                "Home",
+                "About",
+                "Model Comparison",
+                "Image Prediction",
+                "Real-Time Detection",
+                "History"
+            ],
+            icons=[
+                "house",
+                "info-circle",
+                "list-task",
+                "image",
+                "camera-video",
+                "clock-history"
+            ],
             menu_icon="cast",
             default_index=0
         )
 
-    # Display selected page
+    # Page rendering
     if oral_option == "Home":
-        st.write("# 🏠 Oral Cancer Home Page")
+        st.write("# 🏠 Oral Cancer Home")
     elif oral_option == "About":
         st.write("# ℹ️ About Oral Cancer Detection")
     elif oral_option == "Model Comparison":
@@ -39,20 +53,34 @@ if cancer_type == "Oral Cancer Detection":
     elif oral_option == "History":
         st.write("# 🕒 Oral Cancer Detection History")
 
-# Show sub-menu for Leukemia Cancer
+# ------------------ Leukemia Cancer Menu ------------------
 elif cancer_type == "Leukemia Cancer Detection":
     with st.sidebar:
         leukemia_option = option_menu(
             menu_title="Leukemia Cancer Detection",
-            options=["Home", "About", "Model Comparison", "Image Prediction", "Real-Time Detection", "History"],
-            icons=["house", "info-circle", "list-task", "image", "camera-video", "clock-history"],
+            options=[
+                "Home",
+                "About",
+                "Model Comparison",
+                "Image Prediction",
+                "Real-Time Detection",
+                "History"
+            ],
+            icons=[
+                "house",
+                "info-circle",
+                "list-task",
+                "image",
+                "camera-video",
+                "clock-history"
+            ],
             menu_icon="cast",
             default_index=0
         )
 
-    # Display selected page
+    # Page rendering
     if leukemia_option == "Home":
-        st.write("# 🏠 Leukemia Cancer Home Page")
+        st.write("# 🏠 Leukemia Cancer Home")
     elif leukemia_option == "About":
         st.write("# ℹ️ About Leukemia Cancer Detection")
     elif leukemia_option == "Model Comparison":
