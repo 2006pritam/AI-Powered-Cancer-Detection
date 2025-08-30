@@ -1,8 +1,5 @@
 from streamlit_option_menu import option_menu
 import streamlit as st
-import json
-import base64
-import io
 
 # Set the page configuration with a tongue or mouth emoji as the page icon
 st.set_page_config(page_title="Oral Cancer Detection",
@@ -15,9 +12,9 @@ LOGO_URL = "https://images.squarespace-cdn.com/content/v1/67463f2cc9d406701fbea2
 st.logo(LOGO_URL, size="large", link=None, icon_image=None)
 
 # Corrected sidebar title for better branding
-st.sidebar.title("Cancer Detection App")
+st.sidebar.title("Oral Cancer Detection App")
 
-# Add CSS for the spinner (can be customized further)
+# Merged and corrected CSS blocks
 st.markdown(
     """
     <style>
@@ -31,10 +28,7 @@ st.markdown(
         align-items: center;
         height: 100vh;
     }
-    st.markdown(
-    """
-    <style>
-    .reportview-container .main .block-container{
+    .reportview-container .main .block-container {
         padding-top: 1rem;
         padding-right: 1rem;
         padding-left: 1rem;
@@ -49,10 +43,6 @@ st.markdown(
     .st-emotion-cache-1f19z17.e1g8pov61 {
         display: none !important;
     }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
     </style>
     """,
     unsafe_allow_html=True
@@ -79,10 +69,10 @@ def display_page(page_name):
         elif page_name == "Oral Cancer - Real-Time Detection":
             import pages.Real_time_detection as real_time_detection
             real_time_detection.show_real_time_detection()
-        elif page_name == "leukemia - Image Prediction":
+        elif page_name == "Leukoplakia - Image Prediction":
             import pages.Image_prediction as image_prediction
             image_prediction.show_image_prediction()
-        elif page_name == "leukemia - History":
+        elif page_name == "Leukoplakia - History":
             import pages.History as history
             history.show_history()
 
@@ -92,7 +82,7 @@ with st.sidebar:
         menu_title=None,
         options=["Home", "About", "---",
                  "Oral Cancer", "Oral Cancer - Image Prediction", "Oral Cancer - Real-Time Detection", "---",
-                 "leukemia", "leukemia - Image Prediction", "leukemia - History"],
+                 "Leukoplakia", "Leukoplakia - Image Prediction", "Leukoplakia - History"],
         icons=["house", "info-circle", "caret-right",
                "mask", "image", "camera-video", "caret-right",
                "disease", "image", "clock-history"],
