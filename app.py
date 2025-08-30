@@ -5,6 +5,15 @@ import streamlit as st
 st.set_page_config(page_title="Oral Cancer Detection",
                    page_icon="🦷", layout="wide")
 
+# This CSS hides the default Streamlit page tabs at the top of the sidebar.
+st.markdown("""
+<style>
+.st-emotion-cache-16txte5.e1g8pov61 .st-emotion-cache-1f19z17.e1g8pov61 {
+    display: none;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # Logo URL provided by the user
 LOGO_URL = "https://images.squarespace-cdn.com/content/v1/67463f2cc9d406701fbea2d3/e7053cca-131e-499b-b9aa-83d44838328b/caialogo_transparent.png"
 
@@ -14,7 +23,7 @@ st.logo(LOGO_URL, size="large", link=None, icon_image=None)
 # Corrected sidebar title for better branding
 st.sidebar.title("Oral Cancer Detection App")
 
-# Merged and corrected CSS blocks
+# Merged and corrected CSS blocks for spinner and content padding
 st.markdown(
     """
     <style>
@@ -33,15 +42,6 @@ st.markdown(
         padding-right: 1rem;
         padding-left: 1rem;
         padding-bottom: 1rem;
-    }
-
-    /* This CSS hides Streamlit's native sidebar pages */
-    .st-emotion-cache-16txte5.e1g8pov61 .st-emotion-cache-1f19z17.e1g8pov61 {
-        display: none !important;
-    }
-    
-    .st-emotion-cache-1f19z17.e1g8pov61 {
-        display: none !important;
     }
     </style>
     """,
