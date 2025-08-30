@@ -21,7 +21,7 @@ LOGO_URL = "https://images.squarespace-cdn.com/content/v1/67463f2cc9d406701fbea2
 st.logo(LOGO_URL, size="large", link=None, icon_image=None)
 
 # Corrected sidebar title for better branding
-st.sidebar.title("Oral Cancer Detection App")
+st.sidebar.title("Cancer Detection App")
 
 # Merged and corrected CSS blocks for spinner and content padding
 st.markdown(
@@ -69,10 +69,10 @@ def display_page(page_name):
         elif page_name == "Oral Cancer - Real-Time Detection":
             import pages.Real_time_detection as real_time_detection
             real_time_detection.show_real_time_detection()
-        elif page_name == "Leukoplakia - Image Prediction":
+        elif page_name == "leukemia - Image Prediction":
             import pages.Image_prediction as image_prediction
             image_prediction.show_image_prediction()
-        elif page_name == "Leukoplakia - History":
+        elif page_name == "leukemia - History":
             import pages.History as history
             history.show_history()
 
@@ -82,7 +82,7 @@ with st.sidebar:
         menu_title=None,
         options=["Home", "About", "---",
                  "Oral Cancer", "Oral Cancer - Image Prediction", "Oral Cancer - Real-Time Detection", "---",
-                 "Leukoplakia", "Leukoplakia - Image Prediction", "Leukoplakia - History"],
+                 "leukemia", "leukemia - Image Prediction", "leukemia - History"],
         icons=["house", "info-circle", "caret-right",
                "mask", "image", "camera-video", "caret-right",
                "disease", "image", "clock-history"],
