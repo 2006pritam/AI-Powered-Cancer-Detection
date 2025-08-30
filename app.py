@@ -31,6 +31,28 @@ st.markdown(
         align-items: center;
         height: 100vh;
     }
+    st.markdown(
+    """
+    <style>
+    .reportview-container .main .block-container{
+        padding-top: 1rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    /* This CSS hides Streamlit's native sidebar pages */
+    .st-emotion-cache-16txte5.e1g8pov61 .st-emotion-cache-1f19z17.e1g8pov61 {
+        display: none !important;
+    }
+    
+    .st-emotion-cache-1f19z17.e1g8pov61 {
+        display: none !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
     </style>
     """,
     unsafe_allow_html=True
